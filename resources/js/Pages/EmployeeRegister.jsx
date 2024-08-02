@@ -1,29 +1,41 @@
-import { useState } from "react"
-import { router } from '@inertiajs/react';
+import { useState} from "react"
+import { router,useForm } from '@inertiajs/react';
 
 export default function Eregister(){
 
-    const [ values, setValues ] = useState({
+
+    const { data, setData, post, processing, errors } = useForm({
         name: '',
         email: '',
         phone: '',
+    });
 
-    })
+    // const [ values, setValues ] = useState({
+    //     name: '',
+    //     email: '',
+    //     phone: '',
+
+    // })
 
     function handleSubmit(e){
         e.preventDefault()
-        router.post('/Empregister', values)
-        console.log(values)
+        post(route('emp.store'));
     }
 
-    function handleChange(e) {
-        const key = e.target.id;
-        const value = e.target.value
-        setValues(values => ({
-            ...values,
-            [key]: value,
-        }))
-      }
+    // function handleSubmit(e){
+    //     e.preventDefault()
+    //     router.post('/Empregister', values)
+    //     console.log(values)
+    // }
+
+    // function handleChange(e) {
+    //     const key = e.target.id;
+    //     const value = e.target.value
+    //     setValues(values => ({
+    //         ...values,
+    //         [key]: value,
+    //     }))
+    //   }
 
     // function handleChange(e){
     //     e.preventDefault()
@@ -45,8 +57,10 @@ export default function Eregister(){
                         type="text"
                         placeholder="Enter your name"
                         className="rounded-md"
-                        value={values.name}
-                        onChange={handleChange}
+                        // value={values.name}
+                        value={data.name}
+                        // onChange={handleChange}
+                        onChange={e => setData('name', e.target.value)}
                         />
                     </div>
                     <div className="flex gap-5 items-center">
@@ -56,8 +70,11 @@ export default function Eregister(){
                         type="email"
                         placeholder="Enter your email"
                         className="rounded-md "
-                        value={values.email}
-                        onChange={handleChange}/>
+                        // value={values.email}
+                        value={data.email}
+                        // onChange={handleChange}
+                        onChange={e => setData('email', e.target.value)}
+                        />
                     </div>
                     <div className="flex gap-4 items-center">
                         <label>Phone :</label>
@@ -66,8 +83,10 @@ export default function Eregister(){
                         type="text"
                         placeholder="Enter your phone number"
                         className="rounded-md"
-                        value={values.phone}
-                        onChange={handleChange}
+                        // value={values.phone}
+                        value={data.phone}
+                        // onChange={handleChange}
+                        onChange={e => setData('phone', e.target.value)}
                         // onChange={e => setValues({...values, phone: e.target.value})}
                         />
                     </div>
