@@ -6,14 +6,6 @@ import { RiDeleteBinFill } from "react-icons/ri";
 
 export default function list(){
 
-    // const EmployeeId = ({ Eployees }) =>{
-    //     const transformedEmployees = Employees.map(Employee =>({
-    //         id:Employee.id,
-    //         name: Employee.name,
-    //         email:Employee.email,
-    //         phone:Employee.phone,
-    //     }));
-    // }
     const { Employees } = usePage().props;
     const { delete:destroy } = useForm();
 
