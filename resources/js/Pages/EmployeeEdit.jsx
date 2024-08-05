@@ -1,4 +1,4 @@
-import { router,useForm } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
 
 
 export default function EmpEdit({Emplo}){
