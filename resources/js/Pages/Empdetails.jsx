@@ -1,6 +1,6 @@
 import { Link, useForm, usePage } from "@inertiajs/react"
-import { MdOutlineModeEdit } from "react-icons/md";
-import { RiDeleteBinFill } from "react-icons/ri";
+import { MdOutlineModeEdit } from "react-icons/md"
+import { RiDeleteBinFill } from "react-icons/ri"
 
 
 
@@ -20,14 +20,25 @@ export default function list(){
         <>
         <nav className=" flex justify-between text-white h-16 items-center  bg-gray-700 ">
             <h1 className="pl-4">Employee Details</h1>
-            <ul>
-                <li>
-                    <Link 
-                    className="bg-black text-white rounded-md px-5 py-3  mr-4"
-                    href="/Empregister" 
-                    >Register</Link>
-                </li>
-            </ul>
+            <div>
+                
+                <Link 
+                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                href="/Empregister" 
+                >Register</Link>
+            
+            
+                <Link 
+                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                href="/Proassign" 
+                >Assign</Link>
+
+                <Link 
+                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                href="/Prodetails" 
+                >Project</Link>
+            
+            </div>
 
         </nav>
         <div className="bg-gray-100 p-10 h-screen">
