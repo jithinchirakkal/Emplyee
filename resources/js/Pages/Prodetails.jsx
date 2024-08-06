@@ -1,14 +1,22 @@
-import { Link,useForm,usePage } from "@inertiajs/react"
+import { Link,useForm,usePage,router } from "@inertiajs/react"
 import { MdOutlineModeEdit } from "react-icons/md"
 import { RiDeleteBinFill } from "react-icons/ri"
+import { FaSearch } from 'react-icons/fa'
+import { useState} from 'react'
 
 export default function Prodetails(){
 
-    const { Projects } = usePage().props;
+    const { Projects,search } = usePage().props;
     const { delete:destroy } = useForm();
+    const [searchQuery, setsearchQuery] = useState(search || '')
     
 
     // console.log(Projects);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        router.get('/Prodetails', { search: searchQuery });
+      };
 
 
 
@@ -47,6 +55,24 @@ export default function Prodetails(){
         </nav>
         <div className="bg-gray-100 p-10 h-screen">
             <div className="container mx-auto">
+                <form onSubmit={handleSearch} className="flex justify-end mb-4">
+                    <div className="relative">
+                        <input 
+                            type="text" 
+                            value={searchQuery} 
+                            onChange={(e) => setsearchQuery(e.target.value)} 
+                            placeholder="Search employees" 
+                            className="w-full pl-10 text-sm text-gray-700 rounded-lg focus:ring-2 focus:ring-gray-600"
+                        />
+                        <FaSearch className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-400" />
+                    </div>
+                    <button 
+                        type="submit" 
+                        className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg ml-2"
+                    >
+                        Search
+                    </button>
+                </form>
                 <table className="min-w-full bg-white border-collapse border border-gray-200">
                     <thead>
                         <tr>
