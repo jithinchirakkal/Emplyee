@@ -1,5 +1,8 @@
 import { useState} from "react"
 import { router,useForm } from '@inertiajs/react';
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css';
+
 
 export default function Eregister(){
 
@@ -10,23 +13,12 @@ export default function Eregister(){
         phone: '',
     });
 
-    // const [ values, setValues ] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-
-    // })
 
     function handleSubmit(e){
         e.preventDefault()
         post(route('emp.store'));
     }
 
-    // function handleSubmit(e){
-    //     e.preventDefault()
-    //     router.post('/Empregister', values)
-    //     console.log(values)
-    // }
 
     // function handleChange(e) {
     //     const key = e.target.id;
@@ -73,7 +65,7 @@ export default function Eregister(){
             <div className="mt-10 p-4 h-3/5 w-96 bg-white shadow-md rounded-md">
                 <form onSubmit={handleSubmit}>
                     <div className="space-y-4 ">
-                        <h1 className="text-2xl font-bold mb-4">Registration Form</h1>
+                        <h1 className="text-2xl font-bold  mb-4 text-center">Registration Form</h1>
                     </div>
                     <div className="space-y-4">
                         <div>
@@ -102,18 +94,31 @@ export default function Eregister(){
                                 onChange={(e) => setData('email', e.target.value)}
                             />
                         </div>
-                        <div>
+                        <div className="flex flex-col">
+                            <label htmlFor="phone" className="mb-2 text-gray-700">Phone Number</label>
+                            <PhoneInput
+                            international
+                            defaultCountry="RU"
+                            value={data.phone}
+                            onChange={(value) => setData('phone', value)}
+                            className={`border border-gray-400 p-2 w-full rounded-md`}
+                            inputClassName="w-full p-2"
+                            aria-label="Phone Number"
+                            />
+                        </div>
+                        {/* <div>
                             <label htmlFor="employee" className="block text-gray-700">Phone :</label>
                             <input
                                 id="phone"
                                 name="phone"
+                                type="number"
                                 placeholder="Enter phone number"
                                 value={data.employee_id}
                                 // onChange={handleChange}
                                 onChange={(e) => setData('phone', e.target.value)}
                                 className="border border-gray-400 p-2 w-full rounded-md"
                             />
-                        </div>
+                        </div> */}
                         <div>
                             <button
                                 className=" mt-5 bg-green-500 text-white rounded-md px-5 py-2 w-full hover:bg-green-600"
@@ -126,58 +131,6 @@ export default function Eregister(){
                 </form>
             </div>
         </div>
-        {/* <div className="h-screen items-center ">
-            <form className="flex flex-col gap-2 items-center bg-slate-500 rounded-md pb-5 h-screen" onSubmit={handleSubmit}>
-                <h1 className="font-bold text-center mt-10 mb-5">Registration Form</h1>
-                <div className="flex flex-col gap-3"> 
-                    <div className="flex gap-4 items-center">
-                        <label>Name :</label>
-                        <input
-                        id="name"
-                        type="text"
-                        placeholder="Enter your name"
-                        className="rounded-md"
-                        // value={values.name}
-                        value={data.name}
-                        // onChange={handleChange}
-                        onChange={e => setData('name', e.target.value)}
-                        />
-                    </div>
-                    <div className="flex gap-5 items-center">
-                        <label>Email :</label>
-                        <input
-                        id="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        className="rounded-md "
-                        // value={values.email}
-                        value={data.email}
-                        // onChange={handleChange}
-                        onChange={e => setData('email', e.target.value)}
-                        />
-                    </div>
-                    <div className="flex gap-4 items-center">
-                        <label>Phone :</label>
-                        <input
-                        id="phone"
-                        type="text"
-                        placeholder="Enter your phone number"
-                        className="rounded-md"
-                        // value={values.phone}
-                        value={data.phone}
-                        // onChange={handleChange}
-                        onChange={e => setData('phone', e.target.value)}
-                        // onChange={e => setValues({...values, phone: e.target.value})}
-                        />
-                    </div>
-                    <div className="justify-center w-full">
-                        <button className="bg-green-500 rounded-md px-5 py-3 w-full " type="submit">Register</button>
-                    </div>
-                </div>
-            </form>
-        </div> */}
-        
-        
         </>
     )
 }
