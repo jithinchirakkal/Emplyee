@@ -1,5 +1,5 @@
 import { useState} from "react"
-import { router,useForm } from '@inertiajs/react';
+import { router,useForm,Link } from '@inertiajs/react';
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css';
 
@@ -39,15 +39,15 @@ export default function Eregister(){
         <>
         <nav className=" flex justify-between text-white h-16 items-center  bg-gray-700 ">
             <h1 className="pl-4">Registration</h1>
-            {/* <div>
+            <div>
                 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
-                href="/Empregister" 
-                >Register</Link>
+                className=" text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
+                href="/dashboard" 
+                >Details</Link>
             
             
-                <Link 
+                {/* <Link 
                 className="bg-black text-white rounded-md px-5 py-3  mr-4"
                 href="/Proassign" 
                 >Assign</Link>
@@ -55,21 +55,21 @@ export default function Eregister(){
                 <Link 
                 className="bg-black text-white rounded-md px-5 py-3  mr-4"
                 href="/Prodetails" 
-                >Project</Link>
+                >Project</Link> */}
             
-            </div> */}
+            </div>
 
         </nav>
         {/* <div className="font-extrabold justify-center">Employee Registration</div> */}
         <div className="flex h-screen bg-gradient-to-b from-neutral-950 via-slate-700 to-slate-900 justify-center">
-            <div className="mt-10 p-4 h-3/5 w-96 bg-white shadow-md rounded-md">
-                <form onSubmit={handleSubmit}>
+            <div >
+                <form className="flex flex-col gap-2 items-center  shadow-2xl shadow-slate-500  rounded-2xl p-5 mt-28"  onSubmit={handleSubmit}>
                     <div className="space-y-4 ">
-                        <h1 className="text-2xl font-bold  mb-4 text-center">Registration Form</h1>
+                        <h1 className="text-2xl font-bold  mb-4 text-center text-white">Registration Form</h1>
                     </div>
                     <div className="space-y-4">
                         <div>
-                            <label htmlFor="title" className="block text-gray-700">Name:</label>
+                            <label htmlFor="title" className="block text-white mb-2">Name:</label>
                             <input
                                 id="name"
                                 name="name"
@@ -82,7 +82,7 @@ export default function Eregister(){
                             />
                         </div>
                         <div>
-                            <label htmlFor="Email" className="block text-gray-700">Email :</label>
+                            <label htmlFor="Email" className="block text-white mb-2">Email :</label>
                             <input
                                 id="Email"
                                 name="Email"
@@ -95,7 +95,7 @@ export default function Eregister(){
                             />
                         </div>
                         <div className="flex flex-col">
-                            <label htmlFor="phone" className="mb-2 text-gray-700">Phone Number</label>
+                            <label htmlFor="phone" className="text-white mb-2">Phone :</label>
                             <PhoneInput
                             international
                             defaultCountry="RU"

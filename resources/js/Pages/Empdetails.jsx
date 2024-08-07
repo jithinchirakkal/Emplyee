@@ -33,18 +33,18 @@ export default function list(){
             <div>
                 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className=" text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/Empregister" 
                 >Register</Link>
             
             
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className=" text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/Proassign" 
                 >Assign</Link>
 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className=" text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/Prodetails" 
                 >Project</Link>
             
@@ -71,14 +71,14 @@ export default function list(){
                         Search
                     </button>
                 </form>
-                <table className="min-w-full bg-white border-collapse border border-gray-200">
+                <table className="w-full bg-white border-collapse border border-gray-200">
                     <thead>
                         <tr>
-                            <th className="py-2 px-4 border border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Empoyee_Id</th>
-                            <th className="py-2 px-4 border border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                            <th className="py-2 px-4 border border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                            <th className="py-2 px-4 border border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
-                            <th className="py-2 px-4 border border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            <th className="py-2 px-1 border border-gray-200 bg-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Empoyee_Id</th>
+                            <th className="py-2 px-4 border border-gray-200 bg-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th className="py-2 px-4 border border-gray-200 bg-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th className="py-2 px-4 border border-gray-200 bg-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                            <th className="py-2 px-1 border border-gray-200 bg-gray-300 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                         </tr>
                     </thead>
                     <tbody className="py-2 px-4 border border-gray-200">

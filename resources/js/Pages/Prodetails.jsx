@@ -41,12 +41,12 @@ export default function Prodetails(){
             
             
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className="text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/Proassign" 
                 >Assign</Link>
 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className="text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/dashboard" 
                 >Employees</Link>
             

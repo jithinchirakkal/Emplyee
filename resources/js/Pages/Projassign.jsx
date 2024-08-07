@@ -48,12 +48,12 @@ export default function ProAssign({Employees}){
                 >Register</Link> */}
 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className="text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/dashboard" 
                 >Employees</Link>
 
                 <Link 
-                className="bg-black text-white rounded-md px-5 py-3  mr-4"
+                className="text-slate-900 font-extrabold rounded-md px-5 py-3  mr-4"
                 href="/Prodetails" 
                 >Project</Link>
             
